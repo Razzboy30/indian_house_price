@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>House Price Prediction</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h2>House Price Prediction</h2>
+      <form action="{{ url_for('predict') }}" method="POST">
+        <div class="input-group">
+          <label>No of Bedrooms:</label>
+          <input type="number" name="bedrooms" required />
+        </div>
+        <div class="input-group">
+          <label>No of Bathrooms:</label>
+          <input type="number" name="bathrooms" required />
+        </div>
+        <div class="input-group">
+          <label>Living Area:</label>
+          <input type="number" name="living_area" required />
+        </div>
+        <div class="input-group">
+          <label>Lot Area:</label>
+          <input type="number" name="lot_area" required />
+        </div>
+        <div class="input-group">
+          <label>No of Floors:</label>
+          <input type="number" name="floors" required />
+        </div>
+        <div class="input-group">
+          <label>House Condition:</label>
+          <input type="number" name="condition" required />
+        </div>
+        <div class="input-group">
+          <label>House Grade:</label>
+          <input type="number" name="grade" required />
+        </div>
+        <div class="input-group">
+          <label>House Area (excluding basement):</label>
+          <input type="number" name="house_area" required />
+        </div>
+        <div class="input-group">
+          <label>Area of the Basement:</label>
+          <input type="number" name="basement_area" required />
+        </div>
+        <div class="input-group">
+          <label>Built Year:</label>
+          <input type="number" name="built_year" required />
+        </div>
+        <div class="input-group">
+          <label>Lattitude:</label>
+          <input type="number" step="any" name="latitude" required />
+        </div>
+        <div class="input-group">
+          <label>Longitude:</label>
+          <input type="number" step="any" name="longitude" required />
+        </div>
+        <div class="input-group">
+          <label>Living Area Renovated:</label>
+          <input type="number" name="living_area_renov" required />
+        </div>
+        <div class="input-group">
+          <label>Lot Area Renovated:</label>
+          <input type="number" name="lot_area_renov" required />
+        </div>
+        <div class="input-group">
+          <label>No of Schools Nearby:</label>
+          <input type="number" name="schools_nearby" required />
+        </div>
+        <div class="input-group">
+          <label>Distance from the Airport:</label>
+          <input type="number" name="airport_distance" required />
+        </div>
+        <div class="input-group">
+          <button type="submit">Predict Price</button>
+        </div>
+      </form>
+      <h3>{{ prediction_text }}</h3>
+    </div>
+  </body>
+</html>
